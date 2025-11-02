@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Pavakie bug tracking system",
   "scripts": {
-    "build": "cd client && npm install && npm run build"
+    "build": "cd client && yarn install && yarn build",
+    "install": "cd client && yarn install"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SUDHAKARJ08/Pavakie_project.git"
+    "url": "https://github.com/SUDHAKARJ08/bug-tracking-system.git"
   },
   "keywords": ["bug-tracking", "kanban", "project-management"],
   "author": "",

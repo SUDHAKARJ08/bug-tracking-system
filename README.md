@@ -28,6 +28,37 @@ A professional bug tracking system with Kanban board, analytics dashboard, and m
 - JWT Authentication
 - Multer (File Uploads)
 
+## Render Deployment
+
+### Configuration
+The project includes a `render.yaml` file configured for Render deployment with separate frontend and backend services.
+
+### Deployment Steps for Render
+
+1. **Import Repository to Render**
+   - Go to [Render Dashboard](https://dashboard.render.com)
+   - Click "New" → "Blueprint"
+   - Connect your GitHub repository: `https://github.com/SUDHAKARJ08/bug-tracking-system.git`
+   - Render will auto-detect the `render.yaml` configuration
+
+2. **Manual Service Creation** (Alternative)
+   - **Frontend (Static Site)**:
+     - Type: Static Site
+     - Build Command: `cd client && yarn install && yarn build`
+     - Publish Directory: `client/dist`
+   - **Backend (Web Service)**:
+     - Type: Web Service
+     - Build Command: `cd server && yarn install`
+     - Start Command: `cd server && node server.js`
+     - Environment Variables: `MONGODB_URI`, `JWT_SECRET`, `PORT=4000`
+
+3. **Environment Variables**
+   - Set `MONGODB_URI` (your MongoDB connection string)
+   - Set `JWT_SECRET` (a secure random string)
+
+4. **Deploy**
+   - Render will automatically build and deploy your services
+
 ## Vercel Deployment
 
 ### Configuration
